@@ -1,6 +1,25 @@
+import type { ProfileDashboard } from '../../models/dashboard';
+import { getProfileDashboard } from '../../services/dashboard';
+
 Page({
   data: {
-    title: '我的',
-    note: '个人信息、声音震动、意见反馈和关于我们的页面骨架。'
+    dashboard: null as ProfileDashboard | null
+  },
+
+  async onLoad() {
+    const dashboard = await getProfileDashboard();
+
+    this.setData({
+      dashboard
+    });
+  },
+
+  onTapMenu(event: WechatMiniprogram.BaseEvent) {
+    const title = event.currentTarget.dataset.title as string | undefined;
+
+    wx.showToast({
+      title: title ? `${title}后续接入` : '后续接入',
+      icon: 'none'
+    });
   }
 });

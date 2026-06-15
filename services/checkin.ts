@@ -1,6 +1,6 @@
 import type { CheckinRecord, ReminderTaskType } from '../models/reminder';
 import type { DailyStats } from '../models/stats';
-import { formatDate } from '../utils/time';
+import { getMockDailyStats } from './mock';
 
 export async function createCheckin(taskType: ReminderTaskType): Promise<CheckinRecord> {
   return {
@@ -12,13 +12,5 @@ export async function createCheckin(taskType: ReminderTaskType): Promise<Checkin
 }
 
 export async function getTodayStats(): Promise<DailyStats> {
-  return {
-    date: formatDate(new Date()),
-    streakDays: 0,
-    tasks: [
-      { taskType: 'water', completed: 0, target: 8 },
-      { taskType: 'eye', completed: 0, target: 6 },
-      { taskType: 'stand', completed: 0, target: 6 }
-    ]
-  };
+  return getMockDailyStats();
 }

@@ -1,7 +1,59 @@
-<view class="page">
-  <view class="page-title">{{title}}</view>
-  <view class="page-note">{{note}}</view>
-  <countdown-ring task="{{tasks[0]}}" />
-  <task-summary stats="{{stats}}" />
-  <action-guide-sheet visible="{{false}}" />
+<view class="page home-page" wx:if="{{dashboard}}">
+  <view class="home-header">
+    <view>
+      <view class="page-title">健康提醒</view>
+      <view class="page-note">{{dashboard.healthScore}}</view>
+    </view>
+    <button class="more-button">•••</button>
+  </view>
+
+  <countdown-ring task="{{dashboard.currentTask}}" bind:ringtap="onShowGuide" />
+
+  <scroll-view class="task-switcher" scroll-x enhanced show-scrollbar="{{false}}">
+    <button
+      wx:for="{{dashboard.tasks}}"
+      wx:key="taskType"
+      class="task-chip {{item.taskType === dashboard.currentTask.taskType ? 'task-chip-active' : ''}}"
+      style="{{item.taskType === dashboard.currentTask.taskType ? 'border-color:' + item.color + '; color:' + item.color : ''}}"
+      data-task-type="{{item.taskType}}"
+      bindtap="onSelectTask"
+    >
+      <text class="chip-icon">{{item.icon}}</text>
+      <text>{{item.title}}</text>
+    </button>
+  </scroll-view>
+
+  <view class="quick-actions">
+    <button class="quick-button pause-button" bindtap="onTogglePause">
+      <text class="quick-icon">{{paused ? '▶' : 'Ⅱ'}}</text>
+      <text>{{paused ? '继续计时' : '暂停计时'}}</text>
+    </button>
+    <button class="quick-button checkin-button" bindtap="onQuickCheckin">
+      <text class="check-mark">✓</text>
+      <text>{{dashboard.currentTask.actionLabel}}</text>
+    </button>
+  </view>
+
+  <view class="overview-head">
+    <view class="section-title">今日健康概览</view>
+    <view class="overview-note">长按卡片可调整时间</view>
+  </view>
+
+  <task-summary items="{{dashboard.tasks}}" />
+
+  <view class="guide-entry card" bindtap="onShowGuide">
+    <view class="guide-entry-icon">👁</view>
+    <view class="guide-entry-text">
+      <view class="guide-entry-title">护眼动作指导</view>
+      <view class="guide-entry-note">跟练 20 秒，缓解屏幕疲劳</view>
+    </view>
+    <view class="guide-entry-arrow">›</view>
+  </view>
+
+  <action-guide-sheet
+    visible="{{sheetVisible}}"
+    guide="{{dashboard.guide}}"
+    bind:skip="onHideGuide"
+    bind:start="onStartGuide"
+  />
 </view>

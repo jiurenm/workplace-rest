@@ -1,4 +1,69 @@
-<view class="page">
-  <view class="page-title">{{title}}</view>
-  <view class="page-note">{{note}}</view>
+<view class="page settings-page" wx:if="{{dashboard}}">
+  <view class="settings-header">
+    <view class="back-icon">‹</view>
+    <view class="settings-title">设置</view>
+    <view class="header-spacer"></view>
+  </view>
+
+  <view class="desktop-card" data-title="添加到桌面" bindtap="onTapPlaceholder">
+    <view class="phone-icon">
+      <view class="phone-drop">💧</view>
+    </view>
+    <view class="desktop-copy">
+      <view class="desktop-title">添加到手机桌面</view>
+      <view class="desktop-note">快速打开，及时提醒</view>
+    </view>
+    <view class="desktop-arrow">›</view>
+  </view>
+
+  <view class="setting-card card" data-title="工作时间" bindtap="onTapPlaceholder">
+    <view class="setting-row">
+      <view class="setting-icon">◷</view>
+      <view class="setting-main">
+        <view class="setting-label">工作时间</view>
+        <view class="setting-value">{{dashboard.workTimeLabel}}</view>
+        <view class="setting-note">{{dashboard.workTimeNote}}</view>
+      </view>
+      <view class="row-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="settings-section-title">提醒设置</view>
+  <view class="reminder-card card">
+    <view class="reminder-row" wx:for="{{dashboard.reminderRows}}" wx:key="taskType">
+      <view class="reminder-left">
+        <view class="reminder-icon" style="color: {{item.color}};">{{item.icon}}</view>
+        <view class="reminder-title">{{item.title}}</view>
+      </view>
+      <view class="reminder-meta">{{item.intervalLabel}}</view>
+      <switch
+        checked="{{item.enabled}}"
+        color="#2f7bff"
+        data-task-type="{{item.taskType}}"
+        bindchange="onToggleReminder"
+      />
+    </view>
+  </view>
+
+  <view class="setting-card card" data-title="专注模式" bindtap="onTapPlaceholder">
+    <view class="setting-row">
+      <view class="setting-icon">♢</view>
+      <view class="setting-main">
+        <view class="setting-label">{{dashboard.focusLabel}}</view>
+        <view class="setting-note">{{dashboard.focusNote}}</view>
+      </view>
+      <view class="row-arrow">›</view>
+    </view>
+  </view>
+
+  <view class="setting-card card" data-title="通知权限管理" bindtap="onTapPlaceholder">
+    <view class="setting-row">
+      <view class="setting-icon">ⓘ</view>
+      <view class="setting-main">
+        <view class="setting-label">通知权限管理</view>
+        <view class="setting-note">{{dashboard.notificationNote}}</view>
+      </view>
+      <view class="row-arrow">›</view>
+    </view>
+  </view>
 </view>

@@ -2,20 +2,21 @@
   "pages": [
     "pages/home/index",
     "pages/stats/index",
+    "pages/achievements/index",
     "pages/settings/index",
     "pages/profile/index"
   ],
   "window": {
     "navigationBarTitleText": "工位小憩",
-    "navigationBarBackgroundColor": "#f7f4ef",
+    "navigationBarBackgroundColor": "#f6f8fc",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f7f4ef",
+    "backgroundColor": "#f6f8fc",
     "backgroundTextStyle": "dark"
   },
   "tabBar": {
-    "color": "#7b756c",
-    "selectedColor": "#24745c",
-    "backgroundColor": "#fffdf8",
+    "color": "#667085",
+    "selectedColor": "#2f7bff",
+    "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "list": [
       {

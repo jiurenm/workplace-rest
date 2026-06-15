@@ -1,4 +1,101 @@
-<view class="page">
-  <view class="page-title">{{title}}</view>
-  <view class="page-note">{{note}}</view>
+<view class="page stats-page" wx:if="{{dashboard}}">
+  <view class="stats-header">
+    <view class="page-title">数据与成就</view>
+  </view>
+
+  <view class="range-tabs">
+    <button
+      wx:for="{{rangeTabs}}"
+      wx:key="*this"
+      class="range-tab {{item === dashboard.activeRange ? 'range-tab-active' : ''}}"
+      data-range="{{item}}"
+      bindtap="onChangeRange"
+    >
+      {{item}}
+    </button>
+  </view>
+
+  <view class="chart-card card">
+    <view class="chart-date">{{dashboard.dateRangeLabel}}</view>
+    <view class="chart-body">
+      <view class="axis-labels">
+        <text>100</text>
+        <text>50</text>
+        <text>0</text>
+      </view>
+      <view class="bar-chart">
+        <view class="bar-day" wx:for="{{dashboard.trends}}" wx:for-item="day" wx:key="dateLabel">
+          <view class="bar-group">
+            <view
+              class="bar"
+              wx:for="{{day.bars}}"
+              wx:for-item="bar"
+              wx:key="taskType"
+              style="height: {{bar.height}}rpx; background: {{bar.color}};"
+            ></view>
+          </view>
+          <view class="bar-label">{{day.dateLabel}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="chart-legend">
+      <view class="legend-item" wx:for="{{dashboard.primaryTasks}}" wx:key="taskType">
+        <view class="legend-dot" style="background: {{item.color}};"></view>
+        <text>{{item.title}}(次)</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="today-card card">
+    <view class="section-title">今日数据概览</view>
+    <view class="today-grid">
+      <view class="today-item" wx:for="{{dashboard.primaryTasks}}" wx:key="taskType">
+        <view class="today-icon" style="background: {{item.lightColor}};">{{item.icon}}</view>
+        <view class="today-name">{{item.title}}</view>
+        <view class="today-count" style="color: {{item.color}};">{{item.completed}}<text>/ {{item.target}} 次</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="calendar-card card">
+    <view class="calendar-head">
+      <view class="section-title">打卡日历</view>
+      <view class="calendar-month">{{dashboard.calendarMonth}} ›</view>
+    </view>
+    <view class="week-row">
+      <text>一</text>
+      <text>二</text>
+      <text>三</text>
+      <text>四</text>
+      <text>五</text>
+      <text>六</text>
+      <text>日</text>
+    </view>
+    <view class="calendar-grid">
+      <view
+        wx:for="{{dashboard.calendarDays}}"
+        wx:key="id"
+        class="calendar-day {{item.isChecked ? 'calendar-day-checked' : ''}} {{item.isToday ? 'calendar-day-today' : ''}} {{item.isCurrentMonth ? '' : 'calendar-day-muted'}}"
+      >
+        {{item.label}}
+      </view>
+    </view>
+  </view>
+
+  <view class="achievement-card card" bindtap="onOpenAchievements">
+    <view class="achievement-head">
+      <view>
+        <view class="section-title">成就徽章</view>
+        <view class="achievement-note">已获得 {{dashboard.achievements.length}} 枚徽章</view>
+      </view>
+      <button class="share-button" catchtap="onShareAchievement">分享</button>
+    </view>
+    <view class="achievement-list">
+      <view class="achievement-item" wx:for="{{dashboard.achievements}}" wx:key="name">
+        <view class="achievement-icon {{item.earned ? '' : 'achievement-icon-locked'}}">{{item.icon}}</view>
+        <view class="achievement-name">{{item.name}}</view>
+        <view class="achievement-condition">{{item.condition}}</view>
+      </view>
+    </view>
+  </view>
 </view>

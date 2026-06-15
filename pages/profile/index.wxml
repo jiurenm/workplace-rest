@@ -1,4 +1,41 @@
-<view class="page">
-  <view class="page-title">{{title}}</view>
-  <view class="page-note">{{note}}</view>
+<view class="profile-page" wx:if="{{dashboard}}">
+  <view class="profile-hero">
+    <view class="status-spacer"></view>
+    <view class="profile-user">
+      <view class="avatar">{{dashboard.avatarText}}</view>
+      <view class="user-copy">
+        <view class="nickname">
+          {{dashboard.nickname}}
+          <text class="edit-icon">✎</text>
+        </view>
+        <view class="subtitle">{{dashboard.subtitle}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="profile-content">
+    <view class="info-card card">
+      <view class="info-title">个人信息</view>
+      <view class="info-row" wx:for="{{dashboard.infoRows}}" wx:key="label">
+        <view class="info-label">{{item.label}}</view>
+        <view class="info-value">{{item.value}} <text>›</text></view>
+      </view>
+    </view>
+
+    <view class="menu-card card">
+      <view
+        class="menu-row"
+        wx:for="{{dashboard.menuItems}}"
+        wx:key="title"
+        data-title="{{item.title}}"
+        bindtap="onTapMenu"
+      >
+        <view class="menu-left">
+          <view class="menu-icon">{{item.icon}}</view>
+          <view class="menu-title">{{item.title}}</view>
+        </view>
+        <view class="menu-arrow">›</view>
+      </view>
+    </view>
+  </view>
 </view>

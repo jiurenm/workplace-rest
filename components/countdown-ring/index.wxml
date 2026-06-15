@@ -1,4 +1,13 @@
-<view class="placeholder">
-  <view class="placeholder-title">{{task.title || fallbackTitle}}</view>
-  <view class="placeholder-note">倒计时环组件占位</view>
+<view class="countdown-shell" bindtap="onTapRing">
+  <view
+    class="ring"
+    style="background: conic-gradient({{task.color}} 0 {{task.progressPercent}}%, {{task.lightColor}} {{task.progressPercent}}% 100%);"
+  >
+    <view class="ring-inner">
+      <view class="task-icon" style="background: {{task.lightColor}}; color: {{task.color}};">{{task.icon}}</view>
+      <view class="ring-label">距离下次{{task.title}}还有</view>
+      <view class="ring-time">{{task.remainingText}}</view>
+      <view class="ring-hint">{{task.hint}}</view>
+    </view>
+  </view>
 </view>

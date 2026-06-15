@@ -1,1 +1,268 @@
+.stats-header {
+  display: flex;
+  justify-content: center;
+}
 
+.range-tabs {
+  display: flex;
+  height: 50rpx;
+  margin: 28rpx 28rpx 24rpx;
+  padding: 4rpx;
+  border-radius: 999rpx;
+  background: #e9eef7;
+}
+
+.range-tab {
+  flex: 1;
+  border-radius: 999rpx;
+  color: #667085;
+  font-size: 24rpx;
+  line-height: 42rpx;
+}
+
+.range-tab-active {
+  background: #2f7bff;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 6rpx 14rpx rgba(47, 123, 255, 0.22);
+}
+
+.chart-card,
+.today-card,
+.calendar-card,
+.achievement-card {
+  padding: 24rpx;
+  margin-top: 22rpx;
+}
+
+.chart-date {
+  color: #344054;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.chart-body {
+  display: flex;
+  height: 230rpx;
+  margin-top: 16rpx;
+}
+
+.axis-labels {
+  display: flex;
+  width: 42rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 32rpx;
+  color: #667085;
+  font-size: 20rpx;
+}
+
+.bar-chart {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 10rpx;
+}
+
+.bar-day {
+  display: flex;
+  width: 70rpx;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-group {
+  display: flex;
+  height: 170rpx;
+  align-items: flex-end;
+  gap: 6rpx;
+}
+
+.bar {
+  width: 10rpx;
+  border-radius: 999rpx 999rpx 0 0;
+}
+
+.bar-label {
+  margin-top: 12rpx;
+  color: #667085;
+  font-size: 20rpx;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx 22rpx;
+  margin-top: 16rpx;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  color: #667085;
+  font-size: 20rpx;
+}
+
+.legend-dot {
+  width: 12rpx;
+  height: 12rpx;
+  margin-right: 8rpx;
+  border-radius: 50%;
+}
+
+.today-grid {
+  display: flex;
+  margin-top: 22rpx;
+}
+
+.today-item {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+.today-item + .today-item {
+  border-left: 1rpx solid #edf1f7;
+}
+
+.today-icon {
+  display: flex;
+  width: 58rpx;
+  height: 58rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10rpx;
+  border-radius: 18rpx;
+  font-size: 32rpx;
+}
+
+.today-name {
+  color: #344054;
+  font-size: 22rpx;
+}
+
+.today-count {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.today-count text {
+  color: #344054;
+  font-size: 20rpx;
+  font-weight: 500;
+}
+
+.calendar-head,
+.achievement-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar-month,
+.achievement-note {
+  color: #667085;
+  font-size: 24rpx;
+}
+
+.week-row,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.week-row {
+  margin-top: 24rpx;
+  color: #98a2b3;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.calendar-grid {
+  gap: 12rpx 0;
+  margin-top: 16rpx;
+}
+
+.calendar-day {
+  display: flex;
+  width: 48rpx;
+  height: 48rpx;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  border-radius: 50%;
+  color: #101828;
+  font-size: 22rpx;
+}
+
+.calendar-day-checked {
+  background: #67c78f;
+  color: #ffffff;
+}
+
+.calendar-day-today {
+  background: #2f7bff;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.calendar-day-muted {
+  color: #c0c7d4;
+}
+
+.share-button {
+  width: 108rpx;
+  height: 56rpx;
+  border-radius: 999rpx;
+  background: #eef5ff;
+  color: #2f7bff;
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 56rpx;
+}
+
+.achievement-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24rpx;
+}
+
+.achievement-item {
+  width: 31%;
+  text-align: center;
+}
+
+.achievement-icon {
+  display: flex;
+  width: 88rpx;
+  height: 88rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffd778, #ff9f1c);
+  font-size: 46rpx;
+  box-shadow: 0 12rpx 22rpx rgba(255, 159, 28, 0.22);
+}
+
+.achievement-icon-locked {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.achievement-name {
+  margin-top: 12rpx;
+  color: #101828;
+  font-size: 23rpx;
+  font-weight: 700;
+}
+
+.achievement-condition {
+  margin-top: 4rpx;
+  color: #667085;
+  font-size: 20rpx;
+  line-height: 1.35;
+}

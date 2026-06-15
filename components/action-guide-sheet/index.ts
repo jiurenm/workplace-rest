@@ -3,6 +3,10 @@ Component({
     visible: {
       type: Boolean,
       value: false
+    },
+    guide: {
+      type: Object,
+      value: {}
     }
   },
 

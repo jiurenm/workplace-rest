@@ -1,1 +1,129 @@
+.profile-page {
+  min-height: 100vh;
+  background: #f6f8fc;
+}
 
+.profile-hero {
+  min-height: 330rpx;
+  padding: 52rpx 32rpx 72rpx;
+  background: linear-gradient(135deg, #66b5ff, #2f7bff);
+}
+
+.status-spacer {
+  height: 24rpx;
+}
+
+.profile-user {
+  display: flex;
+  align-items: center;
+  margin-top: 28rpx;
+}
+
+.avatar {
+  display: flex;
+  width: 112rpx;
+  height: 112rpx;
+  flex: 0 0 112rpx;
+  align-items: center;
+  justify-content: center;
+  border: 6rpx solid rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  background: #ffe1bf;
+  color: #1d2939;
+  font-size: 42rpx;
+  font-weight: 800;
+}
+
+.user-copy {
+  margin-left: 22rpx;
+  color: #ffffff;
+}
+
+.nickname {
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.edit-icon {
+  margin-left: 12rpx;
+  font-size: 26rpx;
+}
+
+.subtitle {
+  margin-top: 10rpx;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 24rpx;
+}
+
+.profile-content {
+  padding: 0 28rpx 56rpx;
+  margin-top: -46rpx;
+}
+
+.info-card,
+.menu-card {
+  padding: 26rpx 28rpx;
+}
+
+.menu-card {
+  margin-top: 24rpx;
+}
+
+.info-title {
+  color: #101828;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.info-row,
+.menu-row {
+  display: flex;
+  min-height: 86rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #edf1f7;
+}
+
+.info-row:last-child,
+.menu-row:last-child {
+  border-bottom: 0;
+}
+
+.info-label {
+  color: #667085;
+  font-size: 26rpx;
+}
+
+.info-value {
+  color: #344054;
+  font-size: 26rpx;
+}
+
+.info-value text,
+.menu-arrow {
+  margin-left: 8rpx;
+  color: #98a2b3;
+  font-size: 38rpx;
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: flex;
+  width: 48rpx;
+  height: 48rpx;
+  align-items: center;
+  justify-content: center;
+  color: #101828;
+  font-size: 30rpx;
+}
+
+.menu-title {
+  margin-left: 18rpx;
+  color: #101828;
+  font-size: 28rpx;
+  font-weight: 600;
+}

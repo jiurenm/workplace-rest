@@ -19,7 +19,10 @@ export function initCloud(): boolean {
   return true;
 }
 
-export function callCloudFunction<TData extends WechatMiniprogram.IAnyObject, TResult>(name: string, data?: TData): Promise<TResult> {
+export function callCloudFunction<TData extends WechatMiniprogram.IAnyObject, TResult>(
+  name: string,
+  data?: TData
+): Promise<TResult> {
   return wx.cloud.callFunction({
     name,
     data

@@ -24,13 +24,18 @@ export const DEFAULT_SETTINGS: UserSettings = {
     start: '09:00',
     end: '18:00'
   },
-  focusTimes: [],
+  focusTimes: [
+    {
+      start: '13:00',
+      end: '14:00'
+    }
+  ],
   reminderPreferences: [
     { taskType: 'water', enabled: true, intervalMinutes: 45 },
-    { taskType: 'eye', enabled: true, intervalMinutes: 20 },
     { taskType: 'stand', enabled: true, intervalMinutes: 60 },
-    { taskType: 'toilet', enabled: false, intervalMinutes: 120 },
-    { taskType: 'brush', enabled: false, intervalMinutes: 720 }
+    { taskType: 'eye', enabled: true, intervalMinutes: 20 },
+    { taskType: 'toilet', enabled: true, intervalMinutes: 120 },
+    { taskType: 'brush', enabled: true, intervalMinutes: 720 }
   ],
   sound: 'default',
   vibration: 'light'

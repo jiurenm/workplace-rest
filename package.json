@@ -2,7 +2,7 @@
   "name": "workplace-rest-miniapp",
   "version": "0.1.0",
   "private": true,
-  "description": "工位小憩微信小程序骨架",
+  "description": "工位小憩微信小程序",
   "scripts": {
     "typecheck": "tsc --noEmit"
   },

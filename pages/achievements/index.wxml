@@ -1,0 +1,40 @@
+<view class="page achievements-page" wx:if="{{dashboard}}">
+  <view class="achievement-nav">
+    <button class="back-button" bindtap="onBack">‹</button>
+    <view class="nav-title">成就徽章</view>
+    <view class="nav-spacer"></view>
+  </view>
+
+  <view class="earned-card">
+    <view class="medal">★</view>
+    <view class="earned-copy">
+      <view class="earned-title">已获得 {{dashboard.earnedCount}} 枚徽章</view>
+      <view class="earned-note">{{dashboard.headline}}</view>
+    </view>
+  </view>
+
+  <view class="achievement-tabs">
+    <button
+      wx:for="{{dashboard.tabs}}"
+      wx:key="*this"
+      class="achievement-tab {{item === dashboard.activeTab ? 'achievement-tab-active' : ''}}"
+      data-tab="{{item}}"
+      bindtap="onChangeTab"
+    >
+      {{item}}
+    </button>
+  </view>
+
+  <view class="badge-grid">
+    <view class="badge-item" wx:for="{{visibleAchievements}}" wx:key="name">
+      <view class="badge-icon {{item.earned ? '' : 'badge-icon-locked'}}">{{item.icon}}</view>
+      <view class="badge-name">{{item.name}}</view>
+      <view class="badge-condition">{{item.condition}}</view>
+    </view>
+  </view>
+
+  <button class="poster-button" bindtap="onSharePoster">
+    <text class="poster-icon">↗</text>
+    <text>分享我的成就</text>
+  </button>
+</view>
