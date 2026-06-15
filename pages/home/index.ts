@@ -38,9 +38,9 @@ Page({
     });
   },
 
-  onSelectTask(event: WechatMiniprogram.BaseEvent) {
+  onSelectTask(event: WechatMiniprogram.CustomEvent<{ taskType?: ReminderTaskType }>) {
     const dashboard = this.data.dashboard;
-    const taskType = event.currentTarget.dataset.taskType as ReminderTaskType | undefined;
+    const taskType = event.detail?.taskType as ReminderTaskType | undefined;
 
     if (!dashboard || !taskType) {
       return;
@@ -57,6 +57,21 @@ Page({
         ...dashboard,
         currentTask
       }
+    });
+  },
+
+  onAdjustTask(event: WechatMiniprogram.CustomEvent<{ taskType?: ReminderTaskType }>) {
+    const dashboard = this.data.dashboard;
+    const taskType = event.detail?.taskType as ReminderTaskType | undefined;
+    const task = dashboard?.tasks.find((item) => item.taskType === taskType);
+
+    if (!task) {
+      return;
+    }
+
+    wx.showToast({
+      title: `调整${task.title}提醒`,
+      icon: 'none'
     });
   },
 
@@ -90,6 +105,10 @@ Page({
   },
 
   onShowGuide() {
+    if (this.data.dashboard?.currentTask.taskType !== 'eye') {
+      return;
+    }
+
     this.setData({
       sheetVisible: true
     });

@@ -9,9 +9,15 @@
   min-height: 116rpx;
   align-items: center;
   padding: 20rpx 22rpx;
+  border: 2rpx solid transparent;
   border-radius: 18rpx;
   background: #ffffff;
   box-shadow: 0 14rpx 34rpx rgba(31, 44, 71, 0.06);
+}
+
+.summary-card-active {
+  background: #f7fbff;
+  box-shadow: 0 16rpx 36rpx rgba(47, 123, 255, 0.1);
 }
 
 .summary-icon {
