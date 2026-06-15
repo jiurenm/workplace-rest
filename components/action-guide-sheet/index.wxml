@@ -1,6 +1,7 @@
-<view wx:if="{{visible}}" class="sheet-mask" catchtap="onSkip"></view>
+<view wx:if="{{visible}}" class="sheet-mask" catchtap="onClose"></view>
 <view wx:if="{{visible}}" class="sheet">
   <view class="sheet-handle"></view>
+  <button class="sheet-close" bindtap="onClose">×</button>
   <view class="sheet-head">
     <view class="sheet-title-wrap">
       <view class="sheet-icon">👁</view>
@@ -9,7 +10,6 @@
         <view class="sheet-subtitle">{{guide.subtitle}}</view>
       </view>
     </view>
-    <button class="sheet-close" bindtap="onSkip">×</button>
   </view>
 
   <view class="guide-hero">
@@ -25,7 +25,11 @@
   </view>
 
   <view class="guide-steps">
-    <view class="guide-step" wx:for="{{guide.steps}}" wx:key="title">
+    <view
+      class="guide-step {{index === activeStepIndex ? 'guide-step-active' : ''}}"
+      wx:for="{{guide.steps}}"
+      wx:key="title"
+    >
       <view class="step-icon">{{item.icon}}</view>
       <view class="step-title">{{index + 1}}. {{item.title}}</view>
       <view class="step-detail">{{item.detail}}</view>
@@ -33,11 +37,13 @@
   </view>
 
   <view class="guide-timer">
-    <view class="timer-ring">{{guide.durationLabel}}</view>
+    <view class="timer-ring {{isRunning ? 'timer-ring-running' : ''}}">
+      <text>{{isComplete ? 'OK' : currentValue + currentUnit}}</text>
+    </view>
   </view>
 
   <view class="sheet-actions">
-    <button class="skip-button" bindtap="onSkip">跳过</button>
-    <button class="start-button" bindtap="onStart">开始 20s 护眼操</button>
+    <button class="skip-button" bindtap="onSkipStep">{{skipLabel}}</button>
+    <button class="start-button" bindtap="onStart">{{actionLabel}}</button>
   </view>
 </view>

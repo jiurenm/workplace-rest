@@ -14,10 +14,31 @@
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 16rpx 28rpx 34rpx;
+  padding: 16rpx 32rpx 38rpx;
   border-radius: 32rpx 32rpx 0 0;
   background: #ffffff;
   box-shadow: 0 -20rpx 48rpx rgba(16, 24, 40, 0.16);
+}
+
+.sheet-close {
+  position: absolute;
+  top: 28rpx;
+  right: 18rpx;
+  display: flex;
+  width: 52rpx;
+  height: 52rpx;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #101828;
+  font-size: 44rpx;
+  line-height: 1;
+}
+
+.sheet-close::after {
+  border: 0;
 }
 
 .sheet-handle {
@@ -32,6 +53,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  padding-right: 72rpx;
 }
 
 .sheet-title-wrap {
@@ -56,22 +78,16 @@
 
 .sheet-title {
   color: #101828;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .sheet-subtitle {
   margin-top: 6rpx;
   color: #667085;
   font-size: 24rpx;
-}
-
-.sheet-close {
-  width: 52rpx;
-  height: 52rpx;
-  color: #101828;
-  font-size: 44rpx;
-  line-height: 52rpx;
 }
 
 .guide-hero {
@@ -158,7 +174,13 @@
   padding: 18rpx 10rpx;
   border: 1rpx solid #edf1f7;
   border-radius: 18rpx;
+  background: #ffffff;
   text-align: center;
+}
+
+.guide-step-active {
+  border-color: #6bd493;
+  background: #f2fbf5;
 }
 
 .step-icon {
@@ -198,27 +220,42 @@
   font-weight: 800;
 }
 
+.timer-ring-running {
+  box-shadow: 0 0 0 10rpx rgba(107, 212, 147, 0.14);
+}
+
 .sheet-actions {
-  display: grid;
-  grid-template-columns: 1fr 1.55fr;
+  display: flex;
   gap: 18rpx;
+  padding: 0 4rpx;
 }
 
 .skip-button,
 .start-button {
   height: 84rpx;
+  margin: 0;
+  padding: 0 20rpx;
   border-radius: 999rpx;
   font-size: 26rpx;
   font-weight: 700;
   line-height: 84rpx;
 }
 
+.skip-button::after,
+.start-button::after {
+  border: 0;
+}
+
 .skip-button {
+  width: 190rpx;
+  flex: 0 0 190rpx;
   background: #f2f4f7;
   color: #667085;
 }
 
 .start-button {
+  min-width: 0;
+  flex: 1;
   background: linear-gradient(135deg, #35bf66, #24b45f);
   color: #ffffff;
 }

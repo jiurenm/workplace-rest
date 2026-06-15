@@ -118,16 +118,6 @@ Page({
     this.setData({
       sheetVisible: false
     });
-  },
-
-  onStartGuide() {
-    this.setData({
-      sheetVisible: false
-    });
-    wx.showToast({
-      title: '护眼计时开始',
-      icon: 'none'
-    });
   }
 });
 

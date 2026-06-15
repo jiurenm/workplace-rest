@@ -35,6 +35,5 @@
     visible="{{sheetVisible}}"
     guide="{{dashboard.guide}}"
     bind:skip="onHideGuide"
-    bind:start="onStartGuide"
   />
 </view>
