@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "lib": ["ES2020", "DOM"],
+    "types": ["miniprogram-api-typings"],
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["models/*"],
+      "@services/*": ["services/*"],
+      "@utils/*": ["utils/*"]
+    },
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["app.ts", "pages/**/*.ts", "components/**/*.ts", "models/**/*.ts", "services/**/*.ts", "utils/**/*.ts", "typings/**/*.d.ts"]
+}

@@ -1,0 +1,21 @@
+.sheet {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 32rpx;
+  border-radius: 8rpx 8rpx 0 0;
+  background: #fffdf8;
+  box-shadow: 0 -12rpx 32rpx rgba(35, 33, 31, 0.08);
+}
+
+.sheet-title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.sheet-note {
+  margin-top: 8rpx;
+  color: #7b756c;
+  font-size: 26rpx;
+}

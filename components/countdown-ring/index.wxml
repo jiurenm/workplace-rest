@@ -1,0 +1,4 @@
+<view class="placeholder">
+  <view class="placeholder-title">{{task.title || fallbackTitle}}</view>
+  <view class="placeholder-note">倒计时环组件占位</view>
+</view>

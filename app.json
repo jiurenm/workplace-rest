@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/stats/index",
+    "pages/settings/index",
+    "pages/profile/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "工位小憩",
+    "navigationBarBackgroundColor": "#f7f4ef",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f4ef",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#7b756c",
+    "selectedColor": "#24745c",
+    "backgroundColor": "#fffdf8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/stats/index",
+        "text": "数据"
+      },
+      {
+        "pagePath": "pages/settings/index",
+        "text": "设置"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

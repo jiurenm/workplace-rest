@@ -1,0 +1,6 @@
+countdown-ring,
+task-summary,
+action-guide-sheet {
+  display: block;
+  margin-top: 32rpx;
+}

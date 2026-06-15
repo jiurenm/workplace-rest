@@ -1,0 +1,13 @@
+{
+  "name": "workplace-rest-miniapp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "工位小憩微信小程序骨架",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^4.0.9",
+    "typescript": "^5.8.3"
+  }
+}

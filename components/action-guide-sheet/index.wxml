@@ -1,0 +1,4 @@
+<view wx:if="{{visible}}" class="sheet">
+  <view class="sheet-title">动作指导</view>
+  <view class="sheet-note">提醒触发后的 Bottom Sheet 占位</view>
+</view>

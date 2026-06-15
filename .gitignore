@@ -1,0 +1,14 @@
+node_modules/
+miniprogram_npm/
+dist/
+coverage/
+
+# WeChat developer tool local files
+project.private.config.json
+.idea/
+.vscode/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
